@@ -22,8 +22,7 @@ def create_topic():
                         topic_str += ('/'+value)
                         print("Enter next topic or type exit:")
         topic_str = topic_str[1:]
-        return topic_lst
-        return topic_str
+        return topic_lst, topic_str
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
