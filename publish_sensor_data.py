@@ -80,7 +80,7 @@ topic_str, topic_lst = create_topic()
 
 client = mqtt.Client()
 client.on_connect = on_connect
-client.username_pw_set(login())
+client.username_pw_set(username, password)
 client.connect("localhost", 1883, 60)
 client.loop_start()
 
