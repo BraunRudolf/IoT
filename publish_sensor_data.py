@@ -76,7 +76,7 @@ def login():
 
 
 username, password = login()
-topic_str, topic_lst = create_topic()
+topic_lst, topic_str  = create_topic()
 
 client = mqtt.Client()
 client.on_connect = on_connect
