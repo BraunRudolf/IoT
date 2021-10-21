@@ -10,7 +10,7 @@ print("Enter sensor id e.g. 28-032131905f8e")
 sensor_id = input()
 
 
-def creat_topic():
+def create_topic():
         print("Enter first topic layer, then every additonal layer, if you're done type 'exit'")
         value = ''
         topic_lst = []
@@ -72,6 +72,12 @@ def login():
 	print("Enter mqtt-broker password:")
 	password = input()
 	return username, password
+
+
+
+
+username, password = login()
+topic_str, topic_lst = create_topic()
 
 client = mqtt.Client()
 client.on_connect = on_connect
