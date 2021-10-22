@@ -9,7 +9,7 @@ print('Enter table name:')
 table_name = input()
 
 # SQLite DB Table Schema
-def creat_columns():
+def create_columns():
     column_str = ''
     value= ''
     value_type = ''
@@ -21,6 +21,7 @@ def creat_columns():
         value_type = input()
         column_str += value + ' ' + value_type +','
     return column_str[:-1]
+
 
 schema_str = f'drop table if exists {table_name};\
                 create table {table_name} (\
