@@ -20,6 +20,7 @@ def create_columns():
         print('Enter column type:')
         value_type = input()
         column_str += value + ' ' + value_type +','
+        print('Enter exit or next')
     return column_str[:-1]
 
 
