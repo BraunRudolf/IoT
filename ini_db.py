@@ -26,7 +26,7 @@ def create_columns():
 schema_str = f'drop table if exists {table_name};\
                 create table {table_name} (\
                 id integer primary key autoincremnt,\
-               {create_colums()}'
+               {create_columns()}'
 
 
 TableSchema=f"""{scheam_str}
