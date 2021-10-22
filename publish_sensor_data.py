@@ -5,6 +5,7 @@ import time
 import paho.mqtt.client as mqtt
 from datetime import datetime
 import json
+import getpass 
 
 print("Enter sensor id e.g. 28-032131905f8e")
 sensor_id = input()
@@ -69,7 +70,7 @@ def login():
 	print("Enter mqtt-broker username:")
 	username = input()
 	print("Enter mqtt-broker password:")
-	password = input()
+	password = getpass.getpass()
 	return username, password
 
 
