@@ -21,6 +21,7 @@ def create_columns():
         value_type = input()
         column_str += value + ' ' + value_type +','
         print('Enter exit or next')
+
     return column_str[:-1]
 
 
