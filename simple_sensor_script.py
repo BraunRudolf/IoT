@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import paho.mqtt.client as mqtt
-import getpass
+import read_temp
+import temp_json
 
 #variables
 sensor_id = '' # e.g. 28-032131905f8e can be found in /sys/bus/w1/devices/
