@@ -3,6 +3,7 @@ import paho.mqtt.client as mqtt
 import read_temp
 import temp_json
 import glob
+import mqtt_functions
 
 
 #variables
