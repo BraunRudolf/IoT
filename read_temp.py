@@ -2,7 +2,7 @@ import os
 import glob
 import time
 
-def read_temp_raw():
+def read_temp_raw(device_file):
 	f = open(device_file, 'r')
 	lines = f.readlines()
 	f.close()
