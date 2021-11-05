@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import paho.mqtt.client as mqtt
-import read_temp
-import temp_json
+from temp_json import json_file
 import glob
 import mqtt_functions
 
