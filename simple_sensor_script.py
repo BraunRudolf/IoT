@@ -2,7 +2,7 @@
 import paho.mqtt.client as mqtt
 from temp_json import json_file
 import glob
-import mqtt_functions
+from mqtt_functions import on_connect
 
 
 #variables
@@ -12,7 +12,7 @@ device_folder = glob.glob(base_dir + sensor_id)[0]
 device_file = device_folder + '/w1_slave'
 mqtt_user = ''
 mqtt_pw = ''
-topic = '' # enter the topic you want to publish the data e.g /home/office/tempreture/indoor
+topic_str = '' # enter the topic you want to publish the data e.g /home/office/tempreture/indoor
 
 
 
@@ -26,4 +26,4 @@ client.loop_start()
 
 while True:
     #time.sleep(1)
-    client.publish(topic_str, json_file())
+    client.publish(topic_str, json_file(sensor_id, device_file))
