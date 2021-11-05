@@ -2,10 +2,13 @@
 import paho.mqtt.client as mqtt
 import read_temp
 import temp_json
+import glob
+
 
 #variables
 sensor_id = '' # e.g. 28-032131905f8e can be found in /sys/bus/w1/devices/
 base_dir = '/sys/bus/w1/devices/'
+device_folder = glob.glob(base_dir + sensor_id)[0]
 device_file = device_folder + '/w1_slave'
 mqtt_user = ''
 mqtt_pw = ''
