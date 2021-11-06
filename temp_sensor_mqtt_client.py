@@ -3,6 +3,7 @@ import paho.mqtt.client as mqtt
 from create_json import json_file
 import glob
 from mqtt_functions import on_connect
+import config
 
 
 #variables
@@ -10,8 +11,8 @@ sensor_id = '' # e.g. 28-032131905f8e can be found in /sys/bus/w1/devices/
 base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + sensor_id)[0]
 device_file = device_folder + '/w1_slave'
-mqtt_user = ''
-mqtt_pw = ''
+mqtt_user = config.username
+mqtt_pw = config.pw
 topic_str = '' # enter the topic you want to publish the data e.g /home/office/tempreture/indoor
 
 
