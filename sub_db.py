@@ -18,8 +18,8 @@ def on_message(mosq, obj, msg):
 	# This is the Master Call for saving MQTT Data into DB
 	# For details of "sensor_Data_Handler" function please refer "sensor_data_to_db.py"
 	print("MQTT Data Received...")
-	#print( "MQTT Topic: " + msg.topic  )
-	#print( "Data: " + str(msg.payload))
+	print( "MQTT Topic: " + msg.topic  )
+	print( "Data: " + str(msg.payload))
 	sensor_Data_Handler(msg.topic, msg.payload)
 
 def on_subscribe(mosq, obj, mid, granted_qos):
