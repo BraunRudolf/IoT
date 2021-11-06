@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import paho.mqtt.client as mqtt
-from creat_json import json_file
+from create_json import json_file
 import glob
 from mqtt_functions import on_connect
 
@@ -26,4 +26,4 @@ client.loop_start()
 
 while True:
     #time.sleep(1)
-    client.publish(topic_str, json_file(sensor_id, device_file))
+    client.publish(topic_str, json_file(sensor_id, device_file, topic_str))
