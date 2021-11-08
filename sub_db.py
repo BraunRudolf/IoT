@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 import paho.mqtt.client as mqtt
 from sub_db_functions import sensor_Data_Handler
-from config import *
+import config
 
-# MQTT Settings 
+
+# MQTT Settings
 MQTT_Broker = "localhost"
 MQTT_Port = 1883
 Keep_Alive_Interval = 45
 MQTT_Topic = "home/office/#"
-username = config.username
-password = config.password
+mqtt_user = config.username
+mqtt_pw = config.password
 
 #Subscribe to all Sensors at Base Topic
 def on_connect(client, userdata, flags, rc):
@@ -35,7 +36,7 @@ client = mqtt.Client()
 client.on_message = on_message
 client.on_connect = on_connect
 client.on_subscribe = on_subscribe
-client.username_pw_set(username, password)
+client.username_pw_set(mqtt_user, mqtt_pw)
 
 # Connect
 client.connect("localhost", 1883, 60)
