@@ -40,7 +40,7 @@ def DHT22_Temp_Data_Handler(jsonData):
 	dbObj = DatabaseManager()
 	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",[SensorID, Data_n_Time, Temperature, Location])
 	del dbObj
-	print("Inserted Temperature Data into Database.")
+
 
 
 #===============================================================
@@ -49,6 +49,5 @@ def DHT22_Temp_Data_Handler(jsonData):
 def sensor_Data_Handler(Topic, jsonData):
 	if "home/office/temperature/" in Topic: 
 		DHT22_Temp_Data_Handler(jsonData)
-		print('Data saved, ' + Topic)
 
 #===============================================================

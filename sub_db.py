@@ -34,16 +34,11 @@ client = mqtt.Client()
 
 # Assign event callbacks
 client.on_connect = on_connect
-print('on_conenct')
 client.on_message = on_message
-print('on_message')
 client.username_pw_set(mqtt_user, mqtt_pw)
-print('set_user_pw')
 client.on_subscribe = on_subscribe
-print('on_sub')
 
 # Connect
-print('conntect')
 client.connect("localhost", 1883, 60)
 
 # Continue the network loop
