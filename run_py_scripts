@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 #bash skript to run all files
 
 #first check if config file exists
