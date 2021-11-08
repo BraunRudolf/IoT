@@ -7,6 +7,8 @@ MQTT_Broker = "localhost"
 MQTT_Port = 1883
 Keep_Alive_Interval = 45
 MQTT_Topic = "home/office/#"
+username = config.username
+password = config.password
 
 #Subscribe to all Sensors at Base Topic
 def on_connect(client, userdata, flags, rc):

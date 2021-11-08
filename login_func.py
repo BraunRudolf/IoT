@@ -1,21 +1,23 @@
 import getpass
 
 def login(config_file = 'config.py'):
-	f = open(config_file, 'w+')
-	lines = f.readlines()
-	print(lines)
-	if lines[0] == []:
+	try:
+		f = open(config_file, 'r')
+		lines = f.readlines()
+		username = lines[0]
+		password = lines[1]
+		f.close()
+		return print('config file exists already')
+
+	except:
+		f = open(config_file, 'w')
 		print("Enter username:")
 		username = input()
-		f.write(f'username = {username}')
+		f.write(f'username = {username}\n')
 		password = getpass.getpass('Password: ')
 		f.write(f'password = {password}')
 		f.close()
-		print('file closed')
-		return username, password
-	else:
-		username =  lines[0]
-		password = lines[1]
-		f.close()
-		return username, password
+		return None
 
+
+login()

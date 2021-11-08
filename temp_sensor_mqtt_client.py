@@ -12,7 +12,7 @@ base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + sensor_id)[0]
 device_file = device_folder + '/w1_slave'
 mqtt_user = config.username
-mqtt_pw = config.pw
+mqtt_pw = config.password
 topic_str = '' # enter the topic you want to publish the data e.g /home/office/tempreture/indoor
 
 

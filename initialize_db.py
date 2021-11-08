@@ -1,7 +1,7 @@
 import sqlite3
 
 # SQLite DB Name
-DB_Name =  "IoT.db"
+DB_Name = "IoT.db"
 
 # SQLite DB Table Schema
 TableSchema="""
