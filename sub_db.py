@@ -33,10 +33,12 @@ def on_subscribe(mosq, obj, mid, granted_qos):
 client = mqtt.Client()
 
 # Assign event callbacks
-client.on_message = on_message
 client.on_connect = on_connect
-client.on_subscribe = on_subscribe
+client.on_message = on_message
 client.username_pw_set(mqtt_user, mqtt_pw)
+
+client.on_subscribe = on_subscribe
+
 
 # Connect
 client.connect("localhost", 1883, 60)
