@@ -1,11 +1,14 @@
 #!/usr/bin/bash
 #bash skript to run all files
-
+echo 'Script started'
 #first check if config file exists
+echo 'Check for config file'
 python3 login_func.py
 
 #start sensor scripts
+echo 'Start publish sensor data'
 python3 sensor1.py &
 #...
 #start script to subscribe the topic and write to db
+echo 'Start subscribing sensor data'
 python3 sub_db.py &

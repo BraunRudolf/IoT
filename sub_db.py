@@ -35,7 +35,7 @@ client = mqtt.Client()
 client.on_message = on_message
 client.on_connect = on_connect
 client.on_subscribe = on_subscribe
-client.username_pw_set(username,password)
+client.username_pw_set(username, password)
 
 # Connect
 client.connect("localhost", 1883, 60)
