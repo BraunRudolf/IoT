@@ -4,13 +4,11 @@ def login(config_file = 'config.py'):
 	f = open(config_file, 'w+')
 	lines = f.readlines()
 	print(lines)
-	if lines == []:
+	if lines[0] == []:
 		print("Enter username:")
 		username = input()
 		f.write(f'username = {username}')
-		print('username written')
 		password = getpass.getpass('Password: ')
-		print('pw written')
 		f.write(f'password = {password}')
 		f.close()
 		print('file closed')
@@ -21,6 +19,3 @@ def login(config_file = 'config.py'):
 		f.close()
 		return username, password
 
-
-username, password = login()
-print(f'{username} : {password}')
