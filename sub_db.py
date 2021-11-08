@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import paho.mqtt.client as mqtt
 from sub_db_functions import sensor_Data_Handler
-import config
+from config import *
 
 # MQTT Settings 
 MQTT_Broker = "localhost"
