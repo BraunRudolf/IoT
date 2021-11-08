@@ -14,9 +14,9 @@ def login(config_file = 'config.py'):
 		f = open(config_file, 'w')
 		print("Enter username:")
 		username = input()
-		f.write(f'username = {username}\n')
+		f.write(f"username = '{username}'\n")
 		password = getpass.getpass('Password: ')
-		f.write(f'password = {password}')
+		f.write(f"password = '{password}'")
 		f.close()
 		return None
 

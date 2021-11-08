@@ -16,7 +16,7 @@ mqtt_pw = config.password
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
 
-    client.subscribe("home/office/temperature/#")
+    client.subscribe(MQTT_Topic)
 
 #Save Data into DB Table
 def on_message(mosq, obj, msg):
