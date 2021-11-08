@@ -1,0 +1,10 @@
+#bash skript to run all files
+
+#first check if config file exists
+python3 login_func.py
+
+#start sensor scripts
+python3 sensor1.py &
+#...
+#start script to subscribe the topic and write to db
+python3 sub_db.py &

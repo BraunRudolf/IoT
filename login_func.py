@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import getpass
 
 def login(config_file = 'config.py'):
