@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import paho.mqtt.client as mqtt
 from sub_db_functions import sensor_Data_Handler
 import config

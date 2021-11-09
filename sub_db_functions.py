@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import json
 import sqlite3
 
 # SQLite DB Name
-DB_Name = "IoT.db"
+DB_Name = "/home/pi/IoT/IoT.db"
 
 #===============================================================
 # Database Manager Class

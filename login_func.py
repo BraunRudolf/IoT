@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import getpass
 
-def login(config_file = 'config.py'):
+def login(config_file = '/home/pi/IoT/config.py'):
 	try:
 		f = open(config_file, 'r')
 		lines = f.readlines()
