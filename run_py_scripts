@@ -1,9 +1,6 @@
 #!/usr/bin/bash
 #bash script to run all files
 
-#check if config file exits
-python3 login_func.py
-
 # mqtt publishing scripts
 python3 <sensor_name>.py &
 #...
