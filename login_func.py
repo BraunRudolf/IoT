@@ -1,5 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import getpass
+# checks or creats config file with mqtt-username and password
 
 def login(config_file = '/home/pi/IoT/config.py'):
 	try:

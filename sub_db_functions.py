@@ -38,7 +38,8 @@ def DHT22_Temp_Data_Handler(jsonData):
 	
 	#Push into DB Table
 	dbObj = DatabaseManager()
-	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",[SensorID, Data_n_Time, Temperature, Location])
+	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",
+								   [SensorID, Data_n_Time, Temperature, Location])
 	del dbObj
 
 
@@ -46,8 +47,8 @@ def DHT22_Temp_Data_Handler(jsonData):
 #===============================================================
 # Master Function to Select DB Function based on MQTT Topic
 
-def sensor_Data_Handler(Topic, jsonData):
-	if "home/office/temperature/" in Topic: 
+def sensor_Data_Handler(topic_str, Topic, jsonData):
+	if topic_str in Topic:
 		DHT22_Temp_Data_Handler(jsonData)
 
 #===============================================================
