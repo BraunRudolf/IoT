@@ -19,7 +19,7 @@ client = mqtt.Client()
 
 # Assign event callbacks
 client.on_connect = mqttf.on_sub_connect
-client.on_message = mqttf.on_sub_message(DB_Name)
+client.on_message = mqttf.on_sub_message(obj, DB_Name, msg)
 client.username_pw_set(mqtt_user, mqtt_pw)
 client.on_subscribe = mqttf.on_subscribe()
 
