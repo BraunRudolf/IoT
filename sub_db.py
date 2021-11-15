@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import paho.mqtt.client as mqtt
-import mqtt_functions as mqttf
+from mqtt_functions import on_sub_connect, on_sub_message, on_subscribe 
 import config
 
 
@@ -18,10 +18,10 @@ DB_Name = "/home/pi/IoT/IoT.db"
 client = mqtt.Client(userdata=MQTT_Topic)
 
 # Assign event callbacks
-client.on_connect = mqttf.on_sub_connect
-client.on_message = mqttf.on_sub_message
+client.on_connect = on_sub_connect
+client.on_message = on_sub_message
 client.username_pw_set(mqtt_user, mqtt_pw)
-client.on_subscribe = mqttf.on_subscribe
+client.on_subscribe = on_subscribe
 
 # Connect
 client.connect("localhost", 1883, 60)
