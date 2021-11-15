@@ -2,7 +2,7 @@
 from sub_db import MQTT_Topic
 from sub_db_functions import sensor_Data_Handler
 
-MQTT_Topic = 'home/#'
+
 
 
 # Prints a connection message on connect
@@ -14,7 +14,7 @@ def on_pub_connect(client, userdata, flags, rc):
 def on_sub_connect(client, flags, rc):
     print("Connected with result code " + str(rc))
 
-    client.subscribe(MQTT_Topic)
+    client.subscribe(MQTT_Topic, 0)
 
 
 # Save Data into DB Table
