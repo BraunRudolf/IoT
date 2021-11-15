@@ -1,4 +1,4 @@
-from sub_db import MQTT_Topic, DB_Name
+#from sub_db import MQTT_Topic, DB_Name
 from sub_db_functions import sensor_Data_Handler
 
 
@@ -9,7 +9,7 @@ def on_pub_connect(client, userdata, flags, rc):
 
 
 # Subscribe to all Sensors at Base Topic
-def on_sub_connect(mosq, flags, rc):
+def on_sub_connect(client, flags, rc):
     print("Connected with result code " + str(rc))
 
     client.subscribe(MQTT_Topic)
