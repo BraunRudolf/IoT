@@ -9,7 +9,7 @@ def on_pub_connect(client, userdata, flags, rc):
 
 
 # Subscribe to all Sensors at Base Topic
-def on_sub_connect(MQTT_Topic, client, flags, rc):
+def on_sub_connect(client, MQTT_Topic, flags, rc):
     print("Connected with result code " + str(rc))
 
     client.subscribe(MQTT_Topic)
