@@ -12,7 +12,7 @@ def on_pub_connect(client, userdata, flags, rc):
 # Subscribe to all Sensors at Base Topic
 def on_sub_connect(client, flags, rc, MQTT_Topic='home/#'):
     print("Connected with result code " + str(rc))
-
+    print(MQTT_Topic)
     client.subscribe(MQTT_Topic, 0)
 
 
@@ -20,6 +20,7 @@ def on_sub_connect(client, flags, rc, MQTT_Topic='home/#'):
 def on_sub_message(mosq, obj, msg, DB_Name='IoT.db'):
 	# This is the Master Call for saving MQTT Data into DB
 	# For details of "sensor_Data_Handler" function please refer "sensor_data_to_db.py"
+    print(DB_Name)
 	sensor_Data_Handler(DB_Name, msg.topic, msg.payload)
 
 
