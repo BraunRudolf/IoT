@@ -18,8 +18,8 @@ DB_Name = "/home/pi/IoT/IoT.db"
 client = mqtt.Client(userdata=MQTT_Topic)
 
 # Assign event callbacks
-client.on_connect = mqttf.on_sub_connect()
-client.on_message = mqttf.on_sub_message()
+client.on_connect = mqttf.on_sub_connect
+client.on_message = mqttf.on_sub_message
 client.username_pw_set(mqtt_user, mqtt_pw)
 client.on_subscribe = mqttf.on_subscribe
 
