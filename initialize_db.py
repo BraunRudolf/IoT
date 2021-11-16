@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sqlite3
+#To-Do build as function
 
 # creates a SQLite data base
 
