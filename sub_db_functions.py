@@ -2,12 +2,14 @@
 import json
 import sqlite3
 from typing import Any
+
+from sub_db import DB_Name
 # SQLite DB Name
 
 #===============================================================
 # Database Manager Class
 
-class DatabaseManager():
+class DatabaseManager(DB_Name):
 	def __init__(self):
 		self.conn = sqlite3.connect(DB_Name)
 		self.conn.execute('pragma foreign_keys = on')
