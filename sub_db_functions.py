@@ -8,7 +8,7 @@ from typing import Any
 #===============================================================
 # Database Manager Class
 
-class DatabaseManager(DB_Name):
+class DatabaseManager():
 	def __init__(self):
 		self.conn = sqlite3.connect(DB_Name)
 		self.conn.execute('pragma foreign_keys = on')
@@ -37,7 +37,7 @@ def DHT22_Temp_Data_Handler(DB_Name, jsonData):
 	Location = json_Dict['Topic']
 	
 	#Push into DB Table
-	dbObj = DatabaseManager(DB_Name)
+	dbObj = DatabaseManager()
 	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",
 								   [SensorID, Data_n_Time, Temperature, Location])
 	del dbObj
