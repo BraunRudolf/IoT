@@ -1,13 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import json
 import sqlite3
 from typing import Any
 
-
-
-
-
-# SQLite DB Name
 
 #===============================================================
 # Database Manager Class
@@ -33,7 +28,6 @@ class DatabaseManager():
 
 # Function to save Temperature to DB Table
 def DHT22_Temp_Data_Handler(DB_Name, jsonData):
-	print(DB_Name)
 	#Parse Data 
 	json_Dict = json.loads(jsonData)
 	SensorID = json_Dict['Sensor_ID']
@@ -51,7 +45,7 @@ def DHT22_Temp_Data_Handler(DB_Name, jsonData):
 
 #===============================================================
 # Master Function to Select DB Function based on MQTT Topic
-# Necessary to add other sensor types
+# Possible add other sensor types/DB table 
 
 def sensor_Data_Handler(DB_Name, Topic, jsonData):
 	if 'home/test' in Topic:
