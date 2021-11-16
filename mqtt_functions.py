@@ -20,7 +20,7 @@ def on_sub_connect(client, userdata, flags, rc):
 def on_sub_message(client, userdata, msg):
 	# This is the Master Call for saving MQTT Data into DB
 	# For details of "sensor_Data_Handler" function please refer "sensor_data_to_db.py"
-	sensor_Data_Handler(userdata, msg.topic, msg.payload)
+	sensor_Data_Handler(DB_name = userdata,Topic= msg.topic,jsonData= msg.payload)
 
 
 def on_subscribe(client, userdata, mid, granted_qos):
