@@ -8,7 +8,7 @@ from typing import Any
 #===============================================================
 # Database Manager Class
 
-class DatabaseManager(DB_Name):
+class DatabaseManager():
 	def __init__(self):
 		self.conn = sqlite3.connect(DB_Name)
 		self.conn.execute('pragma foreign_keys = on')
