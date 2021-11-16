@@ -25,6 +25,7 @@ client.on_subscribe = on_subscribe
 
 # Connect
 client.connect("localhost", 1883, 60)
+client.subscribe(MQTT_Topic, 0)
 
 # Continue the network loop
 client.loop_forever()
