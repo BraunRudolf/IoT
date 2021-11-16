@@ -13,7 +13,7 @@ def on_pub_connect(client, userdata, flags, rc):
 def on_sub_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
 
-    client.subscribe(client, userdata)
+    client.subscribe(userdata)
 
 
 # Save Data into DB Table
