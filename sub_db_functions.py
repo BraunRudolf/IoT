@@ -3,7 +3,6 @@ import json
 import sqlite3
 from typing import Any
 
-from sub_db import DB_Name
 # SQLite DB Name
 
 #===============================================================
