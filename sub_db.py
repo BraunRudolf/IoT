@@ -5,13 +5,14 @@ import config
 
 
 # MQTT Settings
+
 MQTT_Broker = "localhost"
 MQTT_Port = 1883
 Keep_Alive_Interval = 45
-MQTT_Topic = "home/test"
+MQTT_Topic = "home/test" #takes topic
 mqtt_user = config.username
 mqtt_pw = config.password
-DB_Name = "/home/pi/iot_test/IoT/IoT.db"
+DB_Name = "/home/pi/iot_test/IoT/IoT.db" #takes path to data base
 
 
 
@@ -27,7 +28,6 @@ client.on_subscribe = on_subscribe
 
 # Connect
 client.connect("localhost", 1883, 60)
-client.subscribe(MQTT_Topic, 0)
 
 # Continue the network loop
 client.loop_forever()
