@@ -38,7 +38,7 @@ def DHT22_Temp_Data_Handler(DB_Name, jsonData):
 	Location = json_Dict['Topic']
 	
 	#Push into DB Table
-	dbObj = DatabaseManager(DB_Name)
+	dbObj = DatabaseManager()
 	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",
 								   [SensorID, Data_n_Time, Temperature, Location])
 	del dbObj
