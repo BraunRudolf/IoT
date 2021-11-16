@@ -3,12 +3,14 @@ import json
 import sqlite3
 from typing import Any
 
+from sub_db import DB_Name
+
 # SQLite DB Name
 
 #===============================================================
 # Database Manager Class
 
-class DatabaseManager:
+class DatabaseManager(DB_Name):
 	def __init__(self):
 		self.conn = sqlite3.connect(DB_Name)
 		self.conn.execute('pragma foreign_keys = on')
@@ -29,6 +31,7 @@ class DatabaseManager:
 
 # Function to save Temperature to DB Table
 def DHT22_Temp_Data_Handler(DB_Name, jsonData):
+	print(DB_Name)
 	#Parse Data 
 	json_Dict = json.loads(jsonData)
 	SensorID = json_Dict['Sensor_ID']
@@ -37,7 +40,7 @@ def DHT22_Temp_Data_Handler(DB_Name, jsonData):
 	Location = json_Dict['Topic']
 	
 	#Push into DB Table
-	dbObj = DatabaseManager()
+	dbObj = DatabaseManager(DB_Name)
 	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",
 								   [SensorID, Data_n_Time, Temperature, Location])
 	del dbObj
