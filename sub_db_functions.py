@@ -47,8 +47,8 @@ def DHT22_Temp_Data_Handler(DB_Name, jsonData):
 # Master Function to Select DB Function based on MQTT Topic
 # Necessary to add other sensor types
 
-def sensor_Data_Handler(topic_str, Topic,DB_Name, jsonData):
-	if topic_str in Topic:
+def sensor_Data_Handler(DB_Name, Topic, jsonData):
+	if 'home/test' in Topic:
 		DHT22_Temp_Data_Handler(DB_Name, jsonData)
 
 #===============================================================
