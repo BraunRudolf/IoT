@@ -10,7 +10,7 @@ from typing import Any
 
 class DatabaseManager():
 	def __init__(self):
-		self.conn = sqlite3.connect(DB_Name)
+		self.conn = sqlite3.connect('IoT.db')
 		self.conn.execute('pragma foreign_keys = on')
 		self.conn.commit()
 		self.cur = self.conn.cursor()
