@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import paho.mqtt.client as mqtt
-from mqtt_functions import on_sub_connect, on_sub_message, on_subscribe 
+from mqtt_callbacks import on_sub_connect, on_sub_message, on_subscribe 
 import config
 
 
@@ -9,10 +9,10 @@ import config
 MQTT_Broker = "localhost"
 MQTT_Port = 1883
 Keep_Alive_Interval = 45
-MQTT_Topic = "home/test" #takes topic
+MQTT_Topic = "home" #takes topic
 mqtt_user = config.username
 mqtt_pw = config.password
-DB_Name = "/home/pi/iot_test/IoT/IoT.db" #takes path to data base
+DB_Name = "/home/pi/IoT/IoT.db" #takes path to data base
 
 
 
