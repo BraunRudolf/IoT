@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
+
+# Imports
 import getpass
+
+
 # creates config file with credentials  for mqqt broker
 #tasks write script to create mqtt broker and calling create_config()
 

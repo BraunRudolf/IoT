@@ -2,7 +2,9 @@
 import sqlite3
 #To-Do build as function
 
-# creates a SQLite data base
+
+#===============================================================
+# Creates a SQLite data base
 
 # SQLite DB Name
 DB_Name = "IoT.db"

@@ -5,7 +5,7 @@
 import paho.mqtt.client as mqtt
 from create_json import json_file
 import glob
-from mqtt_functions import on_connect
+from mqtt_functions import on_pub_connect
 import config
 
 # MQTT Settings
@@ -21,7 +21,7 @@ topic_str = '' # enter the topic you want to publish the data to e.g /home/offic
 client = mqtt.Client()
 
 # Assign event callbacks
-client.on_connect = on_connect
+client.on_connect = on_pub_connect
 
 # Connect
 client.username_pw_set(mqtt_user, mqtt_pw)
