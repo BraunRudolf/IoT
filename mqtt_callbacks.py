@@ -6,8 +6,8 @@ from sub_db_functions import sensor_Data_Handler
 
 # Prints a connection message on connect
 def on_pub_connect(client, userdata, flags, rc):
-    print("Connected with result code " + str(rc))
-
+    #print("Connected with result code " + str(rc))
+    pass
 
 #===============================================================
 # Custom subscribe callbacks
@@ -15,7 +15,7 @@ def on_pub_connect(client, userdata, flags, rc):
 # Callback to subscribe to all sensors at set topic
 # Requires MQTT_Topic in userdata 
 def on_sub_connect(client, userdata, flags, rc):
-    print("Connected with result code " + str(rc))
+    #print("Connected with result code " + str(rc))
     client.subscribe( userdata['MQTT_Topic'], 0)
 
 
