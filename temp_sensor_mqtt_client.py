@@ -5,7 +5,7 @@
 import paho.mqtt.client as mqtt
 from create_json import json_file
 import glob
-from mqtt_functions import on_pub_connect
+from mqtt_callbacks import on_pub_connect
 import config
 
 # MQTT Settings
