@@ -1,15 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import json
 import sqlite3
+from typing import Any
 
-# SQLite DB Name
-DB_Name = "/home/pi/IoT/IoT.db"
 
 #===============================================================
 # Database Manager Class
 
 class DatabaseManager():
-	def __init__(self):
+	def __init__(self, DB_Name):
 		self.conn = sqlite3.connect(DB_Name)
 		self.conn.execute('pragma foreign_keys = on')
 		self.conn.commit()
@@ -28,7 +27,7 @@ class DatabaseManager():
 # Functions to push Sensor Data into Database
 
 # Function to save Temperature to DB Table
-def DHT22_Temp_Data_Handler(jsonData):
+def DHT22_Temp_Data_Handler(DB_Name, jsonData):
 	#Parse Data 
 	json_Dict = json.loads(jsonData)
 	SensorID = json_Dict['Sensor_ID']
@@ -37,17 +36,19 @@ def DHT22_Temp_Data_Handler(jsonData):
 	Location = json_Dict['Topic']
 	
 	#Push into DB Table
-	dbObj = DatabaseManager()
-	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",[SensorID, Data_n_Time, Temperature, Location])
+	dbObj = DatabaseManager(DB_Name)
+	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature, Location) values (?,?,?,?)",
+								   [SensorID, Data_n_Time, Temperature, Location])
 	del dbObj
 
 
 
 #===============================================================
 # Master Function to Select DB Function based on MQTT Topic
+# Possible add other sensor types/DB table 
 
-def sensor_Data_Handler(Topic, jsonData):
-	if "home/office/temperature/" in Topic: 
-		DHT22_Temp_Data_Handler(jsonData)
+def sensor_Data_Handler(DB_Name, Topic, jsonData):
+	if 'home/test' in Topic:
+		DHT22_Temp_Data_Handler(DB_Name, jsonData)
 
 #===============================================================

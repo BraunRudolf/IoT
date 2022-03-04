@@ -1,5 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import sqlite3
+#To-Do build as function
+
+
+#===============================================================
+# Creates a SQLite data base
 
 # SQLite DB Name
 DB_Name = "IoT.db"
